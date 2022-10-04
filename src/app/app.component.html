@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <span>Lembretes</span>
+  <span class="example-spacer"></span>
+  <form class="example-form">
+    <mat-form-field class="pesquisa" appearance="fill">
+      <mat-label>Busca</mat-label>
+      <input matInput #message maxlength="256" placeholder="Faça sua busca">
+    </mat-form-field>
+  </form>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>note_add</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-tab-group class="prior">
+  <mat-tab label="Geral"> Content 1 </mat-tab>
+  <mat-tab label="Alta Prioridade"> Content 1 </mat-tab>
+  <mat-tab label="Media Prioridade"> Content 2 </mat-tab>
+  <mat-tab label="Baixa Prioridade"> Content 3 </mat-tab>
+</mat-tab-group>
