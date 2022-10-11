@@ -15,17 +15,17 @@
 </mat-toolbar>
 
 <mat-tab-group class="prior"> <!--Tabela de lembretes, abas de prioridade-->
-  <mat-tab label="Alta Prioridade" *ngIf="!encont"><li *ngFor="let lembrete of alta; let i = index">{{lembrete.lembTitle}}
+  <mat-tab label="Alta Prioridade"><li *ngFor="let lembrete of alta; let i = index">{{lembrete.lembTitle}}
     <button mat-icon-button class="adicionar" (click)="editLembA(i)">
       <mat-icon>cached</mat-icon>
     </button>
   </li></mat-tab>
-  <mat-tab label="Media Prioridade" *ngIf="!encont"><li *ngFor="let lembrete of media; let i = index">{{lembrete.lembTitle}}
+  <mat-tab label="Media Prioridade"><li *ngFor="let lembrete of media; let i = index">{{lembrete.lembTitle}}
     <button mat-icon-button class="adicionar" (click)="editLembM(i)">
       <mat-icon>cached</mat-icon>
     </button>
   </li></mat-tab>
-  <mat-tab label="Baixa Prioridade" *ngIf="!encont"><li *ngFor="let lembrete of baixa; let i = index">{{lembrete.lembTitle}}
+  <mat-tab label="Baixa Prioridade"><li *ngFor="let lembrete of baixa; let i = index">{{lembrete.lembTitle}}
     <button mat-icon-button class="adicionar" (click)="editLembB(i)">
       <mat-icon>cached</mat-icon>
     </button>

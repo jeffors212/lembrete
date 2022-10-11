@@ -28,9 +28,9 @@ export class AppComponent {
     ) {}
 
 ngOnInit(): any{
-//  this.pesquisa = this.fb.group({
-//    resPesq: ['',[Validators.required]],
-//  });
+  this.pesquisa = this.fb.group({
+    resPesq: ['',[Validators.required]],
+  });
   this.lembretes = []
   this.alta = []
   this.media = []
@@ -38,7 +38,7 @@ ngOnInit(): any{
   this.pos_a = 0
   this.pos_m = 0
   this.pos_b = 0
-  this.encont = false
+  this.encont = true
 }
 
 novoLembrete(): any {
@@ -132,12 +132,13 @@ pesquisaLemb(){
   console.log(this.pesquisa.value.resPesq)
   while(i < this.alta.length){
     if(this.pesquisa.value.resPesq == this.alta[i].lembText){
-      this.encont=true
+      this.encont=false
       i=i+1
       console.log("alta");
+      break
     }
     else()=>
-      this.encont=false
+      this.encont=true
       console.log("alta-1");
       i=i+1;
     }
