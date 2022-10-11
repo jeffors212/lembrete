@@ -1,20 +1,33 @@
-<mat-toolbar>
+<mat-toolbar><!--Toolbar do começo da page-->
   <span>Lembretes</span>
-  <span class="example-spacer"></span>
-  <form class="example-form">
-    <mat-form-field class="pesquisa" appearance="fill">
+  <form class="barrapesquisa" [formGroup]="pesquisa">
+    <mat-form-field class="pesquisa"> <!--Barra de pesquisa-->
       <mat-label>Busca</mat-label>
-      <input matInput #message maxlength="256" placeholder="Faça sua busca">
+      <input matInput placeholder="Faça sua busca" formControlName="resPesq" name="resPesq">
     </mat-form-field>
   </form>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  <button mat-icon-button class="pesquisa" (click)="pesquisaLemb()">
+    <mat-icon>find_in_page</mat-icon>
+  </button>
+  <button mat-icon-button class="adicionar" (click)="novoLembrete()"> <!--Botao de adicionar lembrete-->
     <mat-icon>note_add</mat-icon>
   </button>
 </mat-toolbar>
 
-<mat-tab-group class="prior">
-  <mat-tab label="Geral"> Content 1 </mat-tab>
-  <mat-tab label="Alta Prioridade"> Content 1 </mat-tab>
-  <mat-tab label="Media Prioridade"> Content 2 </mat-tab>
-  <mat-tab label="Baixa Prioridade"> Content 3 </mat-tab>
+<mat-tab-group class="prior"> <!--Tabela de lembretes, abas de prioridade-->
+  <mat-tab label="Alta Prioridade" *ngIf="!encont"><li *ngFor="let lembrete of alta; let i = index">{{lembrete.lembTitle}}
+    <button mat-icon-button class="adicionar" (click)="editLembA(i)">
+      <mat-icon>cached</mat-icon>
+    </button>
+  </li></mat-tab>
+  <mat-tab label="Media Prioridade" *ngIf="!encont"><li *ngFor="let lembrete of media; let i = index">{{lembrete.lembTitle}}
+    <button mat-icon-button class="adicionar" (click)="editLembM(i)">
+      <mat-icon>cached</mat-icon>
+    </button>
+  </li></mat-tab>
+  <mat-tab label="Baixa Prioridade" *ngIf="!encont"><li *ngFor="let lembrete of baixa; let i = index">{{lembrete.lembTitle}}
+    <button mat-icon-button class="adicionar" (click)="editLembB(i)">
+      <mat-icon>cached</mat-icon>
+    </button>
+  </li></mat-tab>
 </mat-tab-group>

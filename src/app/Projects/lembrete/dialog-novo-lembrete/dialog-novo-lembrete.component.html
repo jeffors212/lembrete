@@ -1,0 +1,36 @@
+<h1 class="titulo-dialog" mat-dialog-title>Criação de lembrete!</h1><!--Título do Dialog-->
+<form class="formulario-lembrete-novo" [formGroup]="lembForm">
+  <div>
+    <mat-form-field class="drop-prioridade" appearance="fill"><!--Seletor de Prioridades-->
+      <mat-label>Selecionar Prioridade</mat-label>
+        <mat-select formControlName="lembPrior" name="lembPrior">
+          <mat-option value="Alta">Alta</mat-option>
+          <mat-option value="Media">Média</mat-option>
+          <mat-option value="Baixa">Baixa</mat-option>
+        </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+      <mat-form-field class="titulo-lembrete"><!--Titulo lembrete-->>
+        <mat-label>Título</mat-label>
+        <input matInput placeholder="Insira o título do lembrete" formControlName="lembTitle" name="lembTitle">
+      </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="conteudo-lembrete"><!--Conteudo do lembrete-->>
+      <mat-label>Conteúdo</mat-label>
+      <input matInput placeholder="Insira o conteúdo do Lembrete" formControlName="lembText" name="lembText">
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions><!--Botões de salvar e fechar-->
+    <button class="save-dialog" mat-button (click)="criarLemb()">
+      <mat-icon>check</mat-icon>
+    </button>
+    <button class="close-dialog" mat-button (click)="cancelar()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</form>

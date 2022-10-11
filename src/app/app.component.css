@@ -2,7 +2,14 @@
   align-items: center;
 }
 
+.barrapesquisa{
+  margin-left: 35%;
+}
+
 .pesquisa{
-  align-items: center;
-  size: 10px;
+  font-size: 75%;
+}
+
+.adicionar{
+  margin-left: 35%;
 }

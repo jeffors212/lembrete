@@ -1,0 +1,23 @@
+.titulo-dialog{
+  align-items: center;
+}
+
+.drop-prioridade{
+  align-items: center;
+}
+
+.titulo-lembrete{
+  align-items: center;
+}
+
+.conteudo-lembrete{
+  align-items: center;
+}
+
+.save-dialog{
+  align-items: left;
+}
+
+.close-dialog{
+  align-items: right;
+}
